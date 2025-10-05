@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our World Our Garden - Home</title>
+    <title>Our World Our Garden - Community Platform</title>
     <style>
         :root {
             --primary-green: #4a7c59;
@@ -32,7 +32,7 @@
         a {
             text-decoration: none;
             color: var(--dark-green);
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         a:hover {
@@ -112,9 +112,9 @@
 
         /* Hero Section */
         .hero {
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
-            background-color: var(--light-green);
+            background: linear-gradient(135deg, var(--light-green) 0%, #d4e8d7 100%);
             margin-bottom: 60px;
         }
 
@@ -122,10 +122,11 @@
             font-size: 3rem;
             margin-bottom: 20px;
             color: var(--dark-green);
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: var(--text-light);
@@ -135,57 +136,63 @@
             display: inline-block;
             background-color: var(--primary-green);
             color: white;
-            padding: 12px 30px;
+            padding: 14px 35px;
             border-radius: 30px;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-green);
         }
 
         .cta-button:hover {
-            background-color: var(--dark-green);
-            color: white;
+            background-color: transparent;
+            color: var(--primary-green);
+            transform: translateY(-2px);
         }
 
         /* Notes Section */
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
             color: var(--dark-green);
         }
 
         .notes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-bottom: 60px;
         }
 
         .note-card {
             background-color: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .note-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .note-emoji {
-            font-size: 2rem;
-            padding: 20px 20px 0;
+            font-size: 2.5rem;
+            padding: 25px 25px 0;
+            text-align: center;
         }
 
         .note-content {
-            padding: 20px;
+            padding: 25px;
         }
 
         .note-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             color: var(--dark-green);
+            line-height: 1.3;
         }
 
         .note-meta {
@@ -197,43 +204,104 @@
         }
 
         .note-summary {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .read-more {
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            color: var(--primary-green);
+        }
+
+        .read-more:hover {
+            gap: 12px;
         }
 
         /* Philosophy Section */
         .philosophy {
             background-color: var(--white);
-            padding: 60px 0;
+            padding: 80px 0;
             margin-bottom: 60px;
         }
 
         .philosophy-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
         }
 
         .philosophy-item {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 25px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .philosophy-item:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-green);
         }
 
         .philosophy-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 25px;
         }
 
         .philosophy-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
             color: var(--dark-green);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        .newsletter .section-title {
+            color: white;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+        }
+
+        .newsletter .cta-button {
+            background: white;
+            color: var(--primary-green);
+            border: 2px solid white;
+        }
+
+        .newsletter .cta-button:hover {
+            background: transparent;
+            color: white;
         }
 
         /* Footer */
@@ -245,14 +313,14 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
 
         .footer-column h3 {
             margin-bottom: 20px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         .footer-column ul {
@@ -260,7 +328,7 @@
         }
 
         .footer-column li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-column a {
@@ -275,29 +343,33 @@
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
+                text-align: center;
             }
 
             nav ul {
                 flex-direction: column;
                 gap: 15px;
-                text-align: center;
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
             }
 
             .notes-grid {
@@ -330,37 +402,37 @@
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             <nav class="nav-menu" id="navMenu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="public-notes.html">Public Notes</a></li>
-                    <li><a href="discord-activity.html">Community</a></li>
-                    <li><a href="subscribe.html">Subscribe</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#notes">Notes</a></li>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                    <li><a href="#subscribe">Subscribe</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <h1>Not social media - make media social</h1>
             <p>A human-centric community platform focused on connection through shared doing, privacy as a right, and community-facilitated connections.</p>
-            <a href="public-notes.html" class="cta-button">Explore Our Garden</a>
+            <a href="#notes" class="cta-button">Explore Our Garden</a>
         </div>
     </section>
 
     <!-- Recent Notes -->
-    <section class="container">
+    <section class="container" id="notes">
         <h2 class="section-title">Recent Notes from the Garden</h2>
         <div class="notes-grid" id="notesGrid">
             <!-- Notes will be dynamically loaded here -->
         </div>
-        <div style="text-align: center;">
-            <a href="public-notes.html" class="cta-button">View All Notes</a>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="#all-notes" class="cta-button" onclick="showAllNotes()">View All Notes</a>
         </div>
     </section>
 
     <!-- Philosophy -->
-    <section class="philosophy">
+    <section class="philosophy" id="philosophy">
         <div class="container">
             <h2 class="section-title">Our Philosophy</h2>
             <div class="philosophy-grid">
@@ -388,6 +460,44 @@
         </div>
     </section>
 
+    <!-- Newsletter -->
+    <section class="newsletter" id="subscribe">
+        <div class="container">
+            <h2 class="section-title">Stay Connected</h2>
+            <p style="max-width: 600px; margin: 0 auto 40px; color: rgba(255,255,255,0.9); font-size: 1.1rem;">
+                Subscribe to our newsletter for updates on community events, new notes, and garden happenings.
+            </p>
+            <form name="subscribe" method="POST" netlify netlify-honeypot="bot-field" class="newsletter-form">
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                </p>
+                
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                
+                <button type="submit" class="cta-button">Subscribe to Updates</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- All Notes Section (hidden by default) -->
+    <section id="all-notes" style="display: none; padding: 80px 0; background: var(--light-green);">
+        <div class="container">
+            <h2 class="section-title">All Community Notes</h2>
+            <div class="notes-grid" id="allNotesGrid">
+                <!-- All notes will be loaded here when needed -->
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="cta-button" onclick="hideAllNotes()" style="background: var(--dark-green);">Back to Top</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -399,10 +509,10 @@
                 <div class="footer-column">
                     <h3>Explore</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="public-notes.html">Public Notes</a></li>
-                        <li><a href="discord-activity.html">Community</a></li>
-                        <li><a href="subscribe.html">Subscribe</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#notes">Notes</a></li>
+                        <li><a href="#philosophy">Philosophy</a></li>
+                        <li><a href="#subscribe">Subscribe</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -433,44 +543,162 @@
             document.getElementById('navMenu').classList.toggle('active');
         });
 
-        // Load notes data
+        // Sample notes data (in a real site, this would be loaded from data/notes.json)
+        const notesData = [
+            {
+                "title": "Market Sounds and Community Rhythms",
+                "author": "Alex Chen",
+                "date": "2025-01-20",
+                "slide_count": 5,
+                "slug": "market-sounds",
+                "emoji": "🎵",
+                "summary": "A reflection on the rhythms and melodies of our local farmer's market, and how they create community bonds."
+            },
+            {
+                "title": "Seed Sharing Traditions",
+                "author": "Maria Rodriguez",
+                "date": "2025-01-18",
+                "slide_count": 7,
+                "slug": "seed-sharing",
+                "emoji": "🌻",
+                "summary": "How our community preserves heirloom varieties through seasonal seed swaps and storytelling."
+            },
+            {
+                "title": "Composting for Beginners",
+                "author": "Sam Wilson",
+                "date": "2025-01-15",
+                "slide_count": 4,
+                "slug": "composting-basics",
+                "emoji": "♻️",
+                "summary": "Simple steps to start turning kitchen scraps into garden gold, even in small spaces."
+            },
+            {
+                "title": "The Language of Bees",
+                "author": "Dr. Eliza Thornton",
+                "date": "2024-01-12",
+                "slide_count": 6,
+                "slug": "bee-language",
+                "emoji": "🐝",
+                "summary": "Understanding the complex communication of our essential pollinators and what they teach us."
+            },
+            {
+                "title": "Winter Garden Planning",
+                "author": "Jordan Lee",
+                "date": "2025-01-10",
+                "slide_count": 5,
+                "slug": "winter-planning",
+                "emoji": "❄️",
+                "summary": "Using the quiet season to dream, design, and prepare for next year's garden abundance."
+            },
+            {
+                "title": "Community Potluck Recipes",
+                "author": "The Garden Community",
+                "date": "2025-01-08",
+                "slide_count": 8,
+                "slug": "potluck-recipes",
+                "emoji": "🍲",
+                "summary": "Favorite dishes and stories shared at our monthly community gatherings around the table."
+            }
+        ];
+
+        // Load recent notes on homepage
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('data/notes.json')
-                .then(response => response.json())
-                .then(notes => {
-                    const notesGrid = document.getElementById('notesGrid');
-                    
-                    // Sort by date (newest first) and take first 6
-                    const recentNotes = notes
-                        .sort((a, b) => new Date(b.date) - new Date(a.date))
-                        .slice(0, 6);
-                    
-                    recentNotes.forEach(note => {
-                        const noteCard = document.createElement('div');
-                        noteCard.className = 'note-card';
-                        
-                        noteCard.innerHTML = `
-                            <div class="note-emoji">${note.emoji}</div>
-                            <div class="note-content">
-                                <h3 class="note-title">${note.title}</h3>
-                                <div class="note-meta">
-                                    <span>By ${note.author}</span>
-                                    <span>${new Date(note.date).toLocaleDateString()}</span>
-                                </div>
-                                <p class="note-summary">${note.summary}</p>
-                                <a href="notes/${note.slug}.html" class="read-more">
-                                    Read more →
-                                </a>
+            const notesGrid = document.getElementById('notesGrid');
+            
+            // Sort by date (newest first) and take first 3
+            const recentNotes = notesData
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .slice(0, 3);
+            
+            recentNotes.forEach(note => {
+                const noteCard = document.createElement('div');
+                noteCard.className = 'note-card';
+                
+                noteCard.innerHTML = `
+                    <div class="note-emoji">${note.emoji}</div>
+                    <div class="note-content">
+                        <h3 class="note-title">${note.title}</h3>
+                        <div class="note-meta">
+                            <span>By ${note.author}</span>
+                            <span>${new Date(note.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                        </div>
+                        <p class="note-summary">${note.summary}</p>
+                        <a href="#" class="read-more" onclick="showNote('${note.slug}')">
+                            Read more →
+                        </a>
+                    </div>
+                `;
+                
+                notesGrid.appendChild(noteCard);
+            });
+        });
+
+        // Show all notes
+        function showAllNotes() {
+            const allNotesSection = document.getElementById('all-notes');
+            const allNotesGrid = document.getElementById('allNotesGrid');
+            
+            // Populate all notes grid
+            allNotesGrid.innerHTML = '';
+            notesData.sort((a, b) => new Date(b.date) - new Date(a.date))
+                .forEach(note => {
+                    const noteCard = document.createElement('div');
+                    noteCard.className = 'note-card';
+                    noteCard.innerHTML = `
+                        <div class="note-emoji">${note.emoji}</div>
+                        <div class="note-content">
+                            <h3 class="note-title">${note.title}</h3>
+                            <div class="note-meta">
+                                <span>By ${note.author}</span>
+                                <span>${new Date(note.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
                             </div>
-                        `;
-                        
-                        notesGrid.appendChild(noteCard);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error loading notes:', error);
-                    document.getElementById('notesGrid').innerHTML = '<p>Unable to load notes at this time.</p>';
+                            <p class="note-summary">${note.summary}</p>
+                            <a href="#" class="read-more" onclick="showNote('${note.slug}')">
+                                Read more →
+                            </a>
+                        </div>
+                    `;
+                    allNotesGrid.appendChild(noteCard);
                 });
+            
+            // Show the section and scroll to it
+            allNotesSection.style.display = 'block';
+            allNotesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Hide all notes
+        function hideAllNotes() {
+            document.getElementById('all-notes').style.display = 'none';
+            document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show individual note (placeholder - in real implementation, this would load the note page)
+        function showNote(slug) {
+            alert(`In a full implementation, this would show the note: ${slug}\n\nFor now, this is a demonstration of the interactive functionality.`);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.philosophy-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = 'var(--light-green)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+            });
         });
     </script>
 </body>
