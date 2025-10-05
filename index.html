@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our World Our Garden - Home</title>
+    <style>
+        :root {
+            --primary-green: #4a7c59;
+            --dark-green: #3a6547;
+            --light-green: #e8f5e9;
+            --warm-beige: #f5f1e6;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--warm-beige);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--dark-green);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-green);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-green);
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--light-green);
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark-green);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--dark-green);
+            color: white;
+        }
+
+        /* Notes Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--dark-green);
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .note-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .note-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .note-emoji {
+            font-size: 2rem;
+            padding: 20px 20px 0;
+        }
+
+        .note-content {
+            padding: 20px;
+        }
+
+        .note-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-green);
+        }
+
+        .note-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .note-summary {
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background-color: var(--white);
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .philosophy-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .philosophy-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-green);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: var(--light-green);
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                width: 100%;
+            }
+
+            .nav-menu.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>Our World Our Garden</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="public-notes.html">Public Notes</a></li>
+                    <li><a href="discord-activity.html">Community</a></li>
+                    <li><a href="subscribe.html">Subscribe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Not social media - make media social</h1>
+            <p>A human-centric community platform focused on connection through shared doing, privacy as a right, and community-facilitated connections.</p>
+            <a href="public-notes.html" class="cta-button">Explore Our Garden</a>
+        </div>
+    </section>
+
+    <!-- Recent Notes -->
+    <section class="container">
+        <h2 class="section-title">Recent Notes from the Garden</h2>
+        <div class="notes-grid" id="notesGrid">
+            <!-- Notes will be dynamically loaded here -->
+        </div>
+        <div style="text-align: center;">
+            <a href="public-notes.html" class="cta-button">View All Notes</a>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy">
+        <div class="container">
+            <h2 class="section-title">Our Philosophy</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">🤝</div>
+                    <h3 class="philosophy-title">Connection through Doing</h3>
+                    <p>We prioritize shared activities over passive consumption, building relationships through collaboration.</p>
+                </div>
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">🔒</div>
+                    <h3 class="philosophy-title">Privacy as a Right</h3>
+                    <p>Your data belongs to you. We don't track, analyze, or sell your personal information.</p>
+                </div>
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">👥</div>
+                    <h3 class="philosophy-title">Community-First</h3>
+                    <p>Real people facilitate connections, not algorithms designed for engagement.</p>
+                </div>
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">🌿</div>
+                    <h3 class="philosophy-title">Anti-Enshitification</h3>
+                    <p>Our design resists platform decay. We prioritize user value over growth metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Our World Our Garden</h3>
+                    <p>A community platform growing through care, not metrics.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="public-notes.html">Public Notes</a></li>
+                        <li><a href="discord-activity.html">Community</a></li>
+                        <li><a href="subscribe.html">Subscribe</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="mailto:ourworldourgarden@gmail.com">Email Us</a></li>
+                        <li><a href="#">Request Discord Invite</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contribute</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Our World Our Garden. This is a garden, not a platform. It grows through care, not metrics. 🌱
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Load notes data
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('data/notes.json')
+                .then(response => response.json())
+                .then(notes => {
+                    const notesGrid = document.getElementById('notesGrid');
+                    
+                    // Sort by date (newest first) and take first 6
+                    const recentNotes = notes
+                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                        .slice(0, 6);
+                    
+                    recentNotes.forEach(note => {
+                        const noteCard = document.createElement('div');
+                        noteCard.className = 'note-card';
+                        
+                        noteCard.innerHTML = `
+                            <div class="note-emoji">${note.emoji}</div>
+                            <div class="note-content">
+                                <h3 class="note-title">${note.title}</h3>
+                                <div class="note-meta">
+                                    <span>By ${note.author}</span>
+                                    <span>${new Date(note.date).toLocaleDateString()}</span>
+                                </div>
+                                <p class="note-summary">${note.summary}</p>
+                                <a href="notes/${note.slug}.html" class="read-more">
+                                    Read more →
+                                </a>
+                            </div>
+                        `;
+                        
+                        notesGrid.appendChild(noteCard);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading notes:', error);
+                    document.getElementById('notesGrid').innerHTML = '<p>Unable to load notes at this time.</p>';
+                });
+        });
+    </script>
+</body>
+</html>
